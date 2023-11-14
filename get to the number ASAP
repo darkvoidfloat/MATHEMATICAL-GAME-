@@ -1,0 +1,53 @@
+
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Hol {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random rand = new Random();
+
+        int x = rand.nextInt((100) + 1);
+        System.out.println("the number you should get to is " + x);
+        int y = rand.nextInt((1000) + 1);
+        System.out.println("the number you got  " + y);
+        System.out.println("get to " + x + "in as low steps as possible!!");
+
+        int o = 0;
+        System.out.println(
+                "W->(*2)(multiplies by two)\nA->(-1)(subtracts the number by one)\nS->(/2)(divides by two)\nD->(+1)(adds by one)");
+        while (y != x) {
+            String z = scanner.nextLine().toLowerCase();
+
+            o++;
+            switch (z) {
+                case "w":
+                    y = y * 2;
+                    System.out.println(y);
+                    break;
+                case "a":
+                    y = y - 1;
+                    System.out.println(y);
+                    break;
+                case "s":
+                    y = y / 2;
+                    System.out.println(y);
+                    break;
+                case "d":
+                    y = y + 1;
+                    System.out.println(y);
+                    break;
+                default:
+                    System.out.println("invalid input press w,a,s,d");
+                    break;
+
+            }
+
+        }
+        if (y == x) {
+            System.out.println("you won!!! in " + o + " tries!!");
+        }
+
+    }
+}
